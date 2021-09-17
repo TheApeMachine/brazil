@@ -18,6 +18,12 @@ func HomePath() string {
 	return BuildPath(home)
 }
 
+func Workdir() string {
+	wd, err := os.Getwd()
+	errnie.Ambient().Log(errnie.ERROR, err)
+	return wd
+}
+
 func BuildPath(frags ...string) string {
 	return filepath.FromSlash(strings.Join(frags, "/"))
 }
