@@ -2,12 +2,11 @@ module github.com/theapemachine/brazil
 
 go 1.17
 
-require github.com/theapemachine/errnie/v2 v2.3.1
+require github.com/theapemachine/errnie/v2 v2.4.0
 
 require (
 	github.com/atomicgo/cursor v0.0.1 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
-	github.com/google/uuid v1.3.0 // indirect
 	github.com/gookit/color v1.4.2 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/magiconair/properties v1.8.5 // indirect

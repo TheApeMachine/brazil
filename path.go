@@ -14,13 +14,13 @@ current user, no matter which OS or environment they are on.
 */
 func HomePath() string {
 	home, err := os.UserHomeDir()
-	errnie.Ambient().Handle(errnie.ERROR, errnie.KIL, err)
+	errnie.Handles(err)
 	return BuildPath(home)
 }
 
 func Workdir() string {
 	wd, err := os.Getwd()
-	errnie.Ambient().Log(errnie.ERROR, err)
+	errnie.Handles(err)
 	return wd
 }
 
