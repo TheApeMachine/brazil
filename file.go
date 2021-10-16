@@ -19,7 +19,7 @@ func NewFile(path string) *File {
 	replaced := strings.Replace(path, "~/", HomePath(), -1)
 
 	buf, err := ioutil.ReadFile(replaced)
-	errnie.Handles(err)
+	errnie.Handles(err).With(errnie.RECV)
 
 	return &File{Data: bytes.NewBuffer(buf)}
 }
@@ -34,14 +34,14 @@ func WriteIfNotExists(path string, embedded embed.FS) {
 
 	if _, err := os.Stat(slug); os.IsNotExist(err) {
 		fs, err := embedded.Open("cfg/" + cfgFile)
-		errnie.Handles(err)
+		errnie.Handles(err).With(errnie.RECV)
 
 		defer fs.Close()
 
 		buf, err := io.ReadAll(fs)
-		errnie.Handles(err)
+		errnie.Handles(err).With(errnie.RECV)
 
 		err = ioutil.WriteFile(slug, buf, 0644)
-		errnie.Handles(err)
+		errnie.Handles(err).With(errnie.RECV)
 	}
 }

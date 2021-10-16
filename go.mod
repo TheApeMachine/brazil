@@ -2,7 +2,7 @@ module github.com/theapemachine/brazil
 
 go 1.17
 
-require github.com/theapemachine/errnie/v2 v2.4.0
+require github.com/theapemachine/errnie/v2 v2.5.0
 
 require (
 	github.com/atomicgo/cursor v0.0.1 // indirect
